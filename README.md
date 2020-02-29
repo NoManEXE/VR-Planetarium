@@ -1,2 +1,2 @@
-# VR-Planetarium
-Сross-platform VR Application to learn the basics of astronomy using game-based learning methods
+# VR Planetarium
+Сross-platform VR Application for learning the basics of astronomy using game-based learning methods
