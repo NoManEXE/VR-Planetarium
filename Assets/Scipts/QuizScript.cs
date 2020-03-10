@@ -6,6 +6,12 @@ using System.Collections.Generic;
 
 public class QuizScript : MonoBehaviour
 {
+    public GameObject QuizAnswer;
+    public GameObject ScoreText;
+    public int score = 0;
+    public GameObject FirstScreen;
+    public GameObject ThirdScreen;
+
     [SerializeField] private Color correctCol,wrongCol;
     public QuestionList[] questions;
     public Text[] answersText;
@@ -44,17 +50,38 @@ public class QuizScript : MonoBehaviour
         }
         else
         {
-
+            
+            FirstScreen.SetActive(false);
+            ThirdScreen.SetActive(true);
+            ShowMessageQuiz();
+            ScoreText.GetComponent<Text>().text = score.ToString("F0");
+            
         }
-
+    }
+    public void ResetScore()
+    {  
+        score = 0;
+    }
+    public void ShowMessageQuiz()
+    {
+           string quizansFail = "Вы не прошли тест,хотите попробовать еще?";
+           string quizansCorrect = "Молодец можешь перейти на следующий уровень или перепройти тест еще раз!";
+            if(score < 3)
+            {
+                QuizAnswer.GetComponent<Text>().text = quizansFail.ToString();
+            }
+            if(score > 2)
+            {
+                QuizAnswer.GetComponent<Text>().text = quizansCorrect.ToString();
+            }
     }
     public void AnswerBtn(int index)
     {
         
         if(answersText[index].text.ToString() == crntQ.answers[0])
         {
-        
-        print("Правильный ответ");
+            score++;
+            print("Правильный ответ");
 
         }
         else
@@ -63,6 +90,7 @@ public class QuizScript : MonoBehaviour
         }
         qList.RemoveAt(randQ);
         questionGenerate();
+
     }
     
 }
