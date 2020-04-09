@@ -8,9 +8,13 @@ public class QuizScript : MonoBehaviour
 {
     public GameObject QuizAnswer;
     public GameObject ScoreText;
+    public GameObject RecordScore;
     public int score = 0;
+    public int recScore;
     public GameObject FirstScreen;
     public GameObject ThirdScreen;
+    public GameObject ShowUser;
+    public GameObject MainPage;
 
     [SerializeField] private Color correctCol,wrongCol;
     public QuestionList[] questions;
@@ -53,8 +57,12 @@ public class QuizScript : MonoBehaviour
             
             FirstScreen.SetActive(false);
             ThirdScreen.SetActive(true);
+            // ShowUser.SetActive(false);
+            // MainPage.SetActive(true);
             ShowMessageQuiz();
             ScoreText.GetComponent<Text>().text = score.ToString("F0");
+            recScore += score;
+            RecordScore.GetComponent<Text>().text = recScore.ToString("F0");
             
         }
     }
@@ -82,7 +90,6 @@ public class QuizScript : MonoBehaviour
         {
             score++;
             print("Правильный ответ");
-
         }
         else
         {
@@ -90,7 +97,7 @@ public class QuizScript : MonoBehaviour
         }
         qList.RemoveAt(randQ);
         questionGenerate();
-
+        
     }
     
 }
