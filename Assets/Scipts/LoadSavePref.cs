@@ -11,7 +11,6 @@ public class LoadSavePref : MonoBehaviour
     public GameObject player;
     void Start()
     {
-        player.transform.position = new Vector3 (20f, 4.415f, -4.278f);
         Load();
     }
   
