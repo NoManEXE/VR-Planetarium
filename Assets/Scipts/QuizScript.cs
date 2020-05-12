@@ -6,6 +6,11 @@ using System.Collections.Generic;
 
 public class QuizScript : MonoBehaviour
 {
+    const string privateCode = "Kx6_Qtm7XUuep2FM-8kBEQDju24yuNeUmQiIGLBNEQvA";
+    const string publicCode = "5eba34430cf2aa0c281a9d62";
+    const string webURL = "http://dreamlo.com/lb/";
+
+
     public GameObject QuizAnswer;
     public GameObject ScoreText;
     public GameObject RecordScore;
@@ -26,6 +31,25 @@ public class QuizScript : MonoBehaviour
     List<object> qList;
     QuestionList crntQ;
     int randQ;
+
+
+    public void AddNewHighscore(string username, int score)
+    {
+        StartCoroutine(UploadNewHighScore(username, score));
+    }
+
+    IEnumerator UploadNewHighScore(string username, int score)
+    {
+        WWW www = new WWW(webURL + privateCode + "/add/" + WWW.EscapeURL(username) + "/" + score);
+        yield return www;
+
+        if (string.IsNullOrEmpty(www.error))
+            print("Upload completed");
+        else
+        {
+            print("Error uploading " + www.error);
+        }
+    }
 
     void Update()
     {
@@ -81,6 +105,7 @@ public class QuizScript : MonoBehaviour
             if(score > 2)
             {
                 QuizAnswer.GetComponent<Text>().text = quizansCorrect.ToString();
+                AddNewHighscore("Vlad", score);
             }
     }
     public void AnswerBtn(int index)
