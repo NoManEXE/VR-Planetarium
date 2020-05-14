@@ -18,8 +18,8 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     public void NewGame()
     {
-         PlayerPrefs.DeleteKey("PlayerX");
-       PlayerPrefs.DeleteKey("PlayerY");
+        PlayerPrefs.DeleteKey("PlayerX");
+        PlayerPrefs.DeleteKey("PlayerY");
         PlayerPrefs.DeleteKey("PlayerZ");
         PlayerPrefs.SetFloat("PlayerX", -4.334f);
         PlayerPrefs.SetFloat("PlayerY", 5.139f);

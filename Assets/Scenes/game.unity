@@ -4667,7 +4667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &691306157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5714,6 +5714,7 @@ MonoBehaviour:
   QuizAnswer: {fileID: 853684277}
   ScoreText: {fileID: 2083988361}
   RecordScore: {fileID: 1669575407}
+  Rec: {fileID: 1669575409}
   score: 0
   recScore: 0
   FirstScreen: {fileID: 2003035458}
@@ -6168,7 +6169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   QuizAnswer: {fileID: 1019863066}
   ScoreText: {fileID: 1891014614}
-  RecordScore: {fileID: 0}
+  RecordScore: {fileID: 1669575407}
+  Rec: {fileID: 1669575409}
   score: 0
   recScore: 0
   FirstScreen: {fileID: 507122006}
@@ -11153,6 +11155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b6e8105a4c977c4cbe1b5229e272f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recScore: {fileID: 1669575409}
   player: {fileID: 1773360702}
 --- !u!4 &1556130207
 Transform:
@@ -11465,7 +11468,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   QuizAnswer: {fileID: 2106434565}
   ScoreText: {fileID: 1235096974}
-  RecordScore: {fileID: 0}
+  RecordScore: {fileID: 1669575407}
+  Rec: {fileID: 1669575409}
   score: 0
   recScore: 0
   FirstScreen: {fileID: 1654572408}
@@ -14211,7 +14215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2103146638
 MonoBehaviour:
   m_ObjectHideFlags: 0

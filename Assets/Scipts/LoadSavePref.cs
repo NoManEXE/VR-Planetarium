@@ -4,10 +4,12 @@ using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LoadSavePref : MonoBehaviour
 {
 
+    public Text recScore;
     public GameObject player;
     void Start()
     {
@@ -43,7 +45,7 @@ public class LoadSavePref : MonoBehaviour
         PlayerPrefs.SetFloat("PlayerX", player.transform.position.x);
         PlayerPrefs.SetFloat("PlayerY", player.transform.position.y);
         PlayerPrefs.SetFloat("PlayerZ", player.transform.position.z);
-
+        PlayerPrefs.SetString( "Score", recScore.text);
     }
 
     // Update is called once per frame
@@ -73,7 +75,7 @@ public class LoadSavePref : MonoBehaviour
     //     }
 
         player.transform.position = new Vector3(PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"), PlayerPrefs.GetFloat("PlayerZ"));
-
+        recScore.text = PlayerPrefs.GetString("Score");
     }
 
 }

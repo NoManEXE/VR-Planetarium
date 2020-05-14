@@ -14,6 +14,7 @@ public class QuizScript : MonoBehaviour
     public GameObject QuizAnswer;
     public GameObject ScoreText;
     public GameObject RecordScore;
+    public Text Rec;
     public int score = 0;
     public int recScore;
     public GameObject FirstScreen;
@@ -85,6 +86,8 @@ public class QuizScript : MonoBehaviour
             // MainPage.SetActive(true);
             ShowMessageQuiz();
             ScoreText.GetComponent<Text>().text = score.ToString("F0");
+            //14.05.2020 - Исправляю баг рекордов
+            recScore = int.Parse(Rec.text);
             recScore += score;
             RecordScore.GetComponent<Text>().text = recScore.ToString("F0");
             
