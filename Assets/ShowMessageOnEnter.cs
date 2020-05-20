@@ -16,8 +16,28 @@ public class ShowMessageOnEnter : MonoBehaviour
             welcomeMessage.SetActive(true);
             
 
+
+
             Debug.Log("object found and set active");
-            Destroy(welcomeMessage, time);
+            // Destroy(welcomeMessage, time);
+            StartCoroutine(dissapearText());
         }
     }
+
+
+   
+
+    public IEnumerator dissapearText()
+    {
+        yield return new WaitForSeconds(5f);
+        LeanTween.scale(welcomeMessage, new Vector3(0, 0, 0), 0.5f).setOnComplete(DestroyMe);
+
+    }
+
+    void DestroyMe()
+    {
+        Destroy(gameObject);
+    }
+
+
 }

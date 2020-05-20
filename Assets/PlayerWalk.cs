@@ -25,6 +25,8 @@ public class PlayerWalk : MonoBehaviour
         isGrounded = true;
     }
 
+    
+
 
     // Update is called once per frame
     void Update()
