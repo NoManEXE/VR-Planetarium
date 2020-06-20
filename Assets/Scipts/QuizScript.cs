@@ -108,7 +108,7 @@ public class QuizScript : MonoBehaviour
             if(score > 2)
             {
                 QuizAnswer.GetComponent<Text>().text = quizansCorrect.ToString();
-                AddNewHighscore("Vlad", score);
+                AddNewHighscore("Dagonail", score);
             }
     }
     public void AnswerBtn(int index)
